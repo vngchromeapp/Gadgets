@@ -3,67 +3,39 @@
   <ModulePrefs
     title="Debug Example"
     height="200"/>
-  <UserPref
-    name="myname"
-    display_name="Name"
-    required="true" />
-  <UserPref
-    name="mycolor"
-    display_name="Color"
-    default_value="Pink"
-    datatype="enum" >   
-      <EnumValue value="Blue" />
-      <EnumValue value="Yellow" />
-      <EnumValue value="Pink" />
-      <EnumValue value="Gray" />
-  </UserPref>
   <Content type="html"> 
   <![CDATA[ 
-    <div id="content_div" style="font-size:20pt; padding:5px; text-align: center;"></div>
-    <div id="debug_div" style="font-size:9pt; padding:5px; color: red;"></div>
-
-    <script type="text/javascript">
-      // Get userprefs
-      var prefs = new gadgets.Prefs();
-
-      // debug flag. When its value is non-zero, debugging messages are displayed
-      var debug = 1;
-      // The string containing debugging messages
-      var debug_html = "";
-
-      // Display date
-      function displayDate (){
-        // DEBUG: is the function getting called?
-        print("In displayDate function<br>");
-          
-        // Create Date object
-        var today = new Date();
-        // Get current time
-        var time = today.getTime();
-        var content_html = "";     
-        var element = document.getElementById('content_div');
-        element.style.backgroundColor=prefs.getString("mycolor");
-        element.style.height=100;
-
-        // DEBUG: print out prefs values
-        print("The background color is " + prefs.getString("mycolor") + "<br>");
-        print("The name is " + prefs.getString("myname") + "<br>");
-      
-        content_html += today.toDateString();
-        // Write content HTML to div
-        document.getElementById("content_div").innerHTML = content_html;    
-      }
+    <style>
+</style>
+<h2>Danh sách ứng dụng</h2>
+<div class="my-container">
+</div>
+<script>
+   var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
+   var applist = [
+  {
+   name: 'Mail Merge',
+   link: SITE_URL+'/apps/mail-merge'
+  }
+ ]
+ var container = document.querySelector('.my-container');
+    var ul = document.createElement('UL');
+    for(var i = 0; i < applist.length; i++){
+     var item = applist[i];
+       var li = document.createElement('LI');
+       var a = document.createElement('A');
+       var img = document.createElement('IMG');
+       var label = document.createElement('SPAN');
+       label.innerHTML = item.name;
+       a.href = 'abc';
+       a.appendChild(img);
+       a.appendChild(label);
+       li.appendChild(a);
+       ul.appendChild(li);
+    }
+ container.appendChild(ul);
   
-      // Outputs debug messages if debug flag has a non-zero value
-      function print(msg) {      
-        if (debug) {
-          debug_html += msg;
-          // Write debug HTML to div
-          document.getElementById("debug_div").innerHTML = debug_html;
-        }
-      }
-      gadgets.util.registerOnLoadHandler(displayDate);
-    </script>
+</script>
   ]]> 
   </Content>
 </Module>
