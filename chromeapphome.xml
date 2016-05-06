@@ -5,40 +5,46 @@
     height="200"/>
   <Content type="html"> 
   <![CDATA[ 
-    <style>
-		body:{
-			background-color: transparent !important;
-		}
-</style>
-<h2>Danh sách ứng dụng</h2>
-<div class="my-container">
-</div>
-<script>
-   var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
-   var applist = [
-  {
-   name: 'Mail Merge',
-   link: SITE_URL+'/apps/mail-merge'
-  }
- ]
- var container = document.querySelector('.my-container');
-    var ul = document.createElement('UL');
-    for(var i = 0; i < applist.length; i++){
-     var item = applist[i];
-       var li = document.createElement('LI');
-       var a = document.createElement('A');
-       var img = document.createElement('IMG');
-       var label = document.createElement('SPAN');
-       label.innerHTML = item.name;
-       a.href = 'abc';
-       a.appendChild(img);
-       a.appendChild(label);
-       li.appendChild(a);
-       ul.appendChild(li);
-    }
- container.appendChild(ul);
-  
-</script>
+  <html>
+	<head>
+		<style>
+			body:{
+				background-color: transparent !important;
+			}
+		</style>
+	</head>
+	<body style="background-color: transparent !important;">
+		<h2>Danh sách ứng dụng</h2>
+		<div class="my-container">
+		</div>
+		<script>
+		   var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
+		   var applist = [
+		  {
+		   name: 'Mail Merge',
+		   link: SITE_URL+'/apps/mail-merge'
+		  }
+		 ]
+		 var container = document.querySelector('.my-container');
+			var ul = document.createElement('UL');
+			for(var i = 0; i < applist.length; i++){
+			 var item = applist[i];
+			   var li = document.createElement('LI');
+			   var a = document.createElement('A');
+			   var img = document.createElement('IMG');
+			   var label = document.createElement('SPAN');
+			   label.innerHTML = item.name;
+			   a.href = 'abc';
+			   a.appendChild(img);
+			   a.appendChild(label);
+			   li.appendChild(a);
+			   ul.appendChild(li);
+			}
+		 container.appendChild(ul);
+		  
+		</script>
+	</body>
+	</html>
   ]]> 
   </Content>
 </Module>
