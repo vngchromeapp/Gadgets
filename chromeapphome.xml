@@ -34,7 +34,7 @@
 			   var img = document.createElement('IMG');
 			   var label = document.createElement('SPAN');
 			   label.innerHTML = item.name;
-			   a.href = 'abc';
+			   a.href = item.link;
 			   a.appendChild(img);
 			   a.appendChild(label);
 			   li.appendChild(a);
