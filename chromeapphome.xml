@@ -6,6 +6,9 @@
   <Content type="html"> 
   <![CDATA[ 
     <style>
+		body:{
+			background-color: transparent !important;
+		}
 </style>
 <h2>Danh sách ứng dụng</h2>
 <div class="my-container">
