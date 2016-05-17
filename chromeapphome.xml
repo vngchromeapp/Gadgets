@@ -18,8 +18,8 @@
 		<div class="my-container">
 		</div>
 		<script>
-		   var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
-		   var applist = [
+		var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
+		var applist = [
 			{
 				sectionName: 'Sheet',
 				apps: [
@@ -38,35 +38,33 @@
 					}
 				]
 			}
-		  
-		 ]
-		 var container = document.querySelector('.my-container');
-			for(var i = 0; i < applist.length; i++){
-				var sectionItem = applist[i];
-				var section = document.createElement('DIV');
-				var sectionTitle = document.createElement('H2');
-				sectionTitle.innerHTML = sectionItem.sectionName;
-				var sectionContent = document.createElement('DIV');
-				section.appendChild(sectionTitle);
-				section.appendChild(sectionContent);
-				for(var j = 0; j < sectionItem.apps.length; j++){
-					var item = sectionItem.apps[j];
-					var app = document.createElement('DIV');
-				    var a = document.createElement('A');
-				    var img = document.createElement('IMG');
-				    var label = document.createElement('SPAN');
-				    label.innerHTML = item.name;
-				    a.href = item.link;
-				    a.target = '_blank';
-				    a.appendChild(img);
-				    a.appendChild(label);
-				    app.appendChild(a);
-				    sectionContent.appendChild(li);
-				}
-				container.appendChild(section);
-			}
 		 
-		  
+		]
+		var container = document.querySelector('.my-container');
+		for(var i = 0; i < applist.length; i++){
+			var sectionItem = applist[i];
+			var section = document.createElement('DIV');
+			var sectionTitle = document.createElement('H2');
+			sectionTitle.innerHTML = sectionItem.sectionName;
+			var sectionContent = document.createElement('DIV');
+			section.appendChild(sectionTitle);
+			section.appendChild(sectionContent);
+			for(var j = 0; j < sectionItem.apps.length; j++){
+				var item = sectionItem.apps[j];
+				var app = document.createElement('DIV');
+				var a = document.createElement('A');
+				var img = document.createElement('IMG');
+				var label = document.createElement('SPAN');
+				label.innerHTML = item.name;
+				a.href = item.link;
+				a.target = '_blank';
+				a.appendChild(img);
+				a.appendChild(label);
+				app.appendChild(a);
+				sectionContent.appendChild(li);
+			}
+			container.appendChild(section);
+		}
 		</script>
 	</body>
 	</html>
