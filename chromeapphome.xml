@@ -11,10 +11,36 @@
 			body:{
 				background-color: transparent !important;
 			}
+			.my-container{
+				font-family: 'Tahoma'
+			}
+			.my-container>div{
+			
+			}
+			.my-container>div>h2{
+				color: #c8c8c8;
+			}
+			.my-container>div>div>div>a{
+				display: inline-block;
+				padding: 10px 7px;
+				text-align: center;
+				text-decoration: none;
+				color: #000;
+				width: 300px;
+			}
+			.my-container>div>div>div>a>img{
+				float: left;
+				margin: auto;
+				width: 50px;
+				margin-right: 5px;
+			}
+			.my-container>div>div>div>a>span{
+				float: left;
+				text-align: left;
+			}
 		</style>
 	</head>
 	<body style="background-color: transparent !important;">
-		<h2>Danh sách ứng dụng</h2>
 		<div class="my-container">
 		</div>
 		<script>
@@ -24,7 +50,9 @@
 				sectionName: 'Sheet',
 				apps: [
 					{
+						img: 'https://lh3.googleusercontent.com/QSFWn4xwNsECAnp9F6MwLOJc-e2Xq0cYdeQ8tOulimXF-QO2nu0G6ruSQQsACKKy8nG7fZo29A=s50-h50-e365',
 					   name: 'Mail Merge',
+					   description: 'Mail Merge',
 					   link: SITE_URL+'/apps/mail-merge'
 					}
 				]
@@ -33,12 +61,24 @@
 				sectionName: 'Calendar',
 				apps: [
 					{
-					   name: 'VNG Meeting Room',
+						img: 'https://s3.amazonaws.com/build.phonegap.com/production/icon/12a9d958-b566-11e5-a053-22000ba18077/icon96.png',
+					   name: 'Meeting Room',
+					   description: 'Mail Merge',
+					   link: SITE_URL+'/apps/mail-merge'
+					}
+				]
+			},
+			{
+				sectionName: 'Social',
+				apps: [
+					{
+						img: 'https://lh3.googleusercontent.com/r4XnpilNwLvb3l1canoqrn0IMzdfbjlPQNZslw-ICuZpmbY5l645luF1o7V37-BsALjvcUb75kw=s26-h26-e365-rw',
+					   name: 'Facebook Comment',
+					   description: 'Facebook Comment',
 					   link: SITE_URL+'/apps/mail-merge'
 					}
 				]
 			}
-		 
 		]
 		//new
 		var container = document.querySelector('.my-container');
@@ -56,11 +96,15 @@
 				var a = document.createElement('A');
 				var img = document.createElement('IMG');
 				var label = document.createElement('SPAN');
-				label.innerHTML = item.name;
+				label.innerHTML = '<b>'+item.name+'</b><br>'+item.description;
 				a.href = item.link;
 				a.target = '_blank';
+				
+				img.src=item.img;
+				
 				a.appendChild(img);
 				a.appendChild(label);
+				
 				app.appendChild(a);
 				sectionContent.appendChild(app);
 			}
