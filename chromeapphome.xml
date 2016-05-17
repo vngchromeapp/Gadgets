@@ -61,7 +61,7 @@
 				a.appendChild(img);
 				a.appendChild(label);
 				app.appendChild(a);
-				sectionContent.appendChild(li);
+				sectionContent.appendChild(app);
 			}
 			container.appendChild(section);
 		}
