@@ -99,7 +99,6 @@
 				label.innerHTML = '<b>'+item.name+'</b><br>'+item.description;
 				a.href = item.link;
 				a.target = '_blank';
-				
 				img.src=item.img;
 				
 				a.appendChild(img);
