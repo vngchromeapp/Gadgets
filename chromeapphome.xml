@@ -45,7 +45,7 @@
 				var sectionItem = applist[i];
 				var section = document.createElement('DIV');
 				var sectionTitle = document.createElement('H2');
-				sectionTitle.innerHTML(sectionItem.sectionName);
+				sectionTitle.innerHTML = sectionItem.sectionName;
 				var sectionContent = document.createElement('DIV');
 				section.appendChild(sectionTitle);
 				section.appendChild(sectionContent);
