@@ -20,28 +20,52 @@
 		<script>
 		   var SITE_URL = 'https://sites.google.com/a/vng.com.vn/chrome-apps';
 		   var applist = [
-		  {
-		   name: 'Mail Merge',
-		   link: SITE_URL+'/apps/mail-merge'
-		  }
+			{
+				sectionName: 'Sheet',
+				apps: [
+					{
+					   name: 'Mail Merge',
+					   link: SITE_URL+'/apps/mail-merge'
+					}
+				]
+			},
+			{
+				sectionName: 'Calendar',
+				apps: [
+					{
+					   name: 'VNG Meeting Room',
+					   link: SITE_URL+'/apps/mail-merge'
+					}
+				]
+			}
+		  
 		 ]
 		 var container = document.querySelector('.my-container');
-			var ul = document.createElement('UL');
 			for(var i = 0; i < applist.length; i++){
-			 var item = applist[i];
-			   var li = document.createElement('LI');
-			   var a = document.createElement('A');
-			   var img = document.createElement('IMG');
-			   var label = document.createElement('SPAN');
-			   label.innerHTML = item.name;
-			   a.href = item.link;
-			   a.target = '_blank';
-			   a.appendChild(img);
-			   a.appendChild(label);
-			   li.appendChild(a);
-			   ul.appendChild(li);
+				var sectionItem = applist[i];
+				var section = document.createElement('DIV');
+				var sectionTitle = document.createElement('H2');
+				sectionTitle.innerHTML(sectionItem.sectionName);
+				var sectionContent = document.createElement('DIV');
+				section.appendChild(sectionTitle);
+				section.appendChild(sectionContent);
+				for(var j = 0; j < sectionItem.apps.length; j++){
+					var item = sectionItem.apps[j];
+					var app = document.createElement('DIV');
+				    var a = document.createElement('A');
+				    var img = document.createElement('IMG');
+				    var label = document.createElement('SPAN');
+				    label.innerHTML = item.name;
+				    a.href = item.link;
+				    a.target = '_blank';
+				    a.appendChild(img);
+				    a.appendChild(label);
+				    app.appendChild(a);
+				    sectionContent.appendChild(li);
+				}
+				container.appendChild(section);
 			}
-		 container.appendChild(ul);
+		 
 		  
 		</script>
 	</body>
