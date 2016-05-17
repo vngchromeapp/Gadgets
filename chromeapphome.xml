@@ -18,7 +18,7 @@
 			
 			}
 			.my-container>div>h2{
-				color: #c8c8c8;
+				color: #616161;
 			}
 			.my-container>div>div>div>a{
 				display: inline-block;
